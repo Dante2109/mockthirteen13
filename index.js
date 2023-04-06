@@ -4,6 +4,7 @@ const cors=require("cors");
 const { userRouter } = require("./Routes/userRoutes");
 const { authenticate } = require("./Middleware/authenticate");
 const { appoiRouter } = require("./Routes/appoiRouter");
+require("dotenv").config()
 const server=express();
 
 server.use(cors())
