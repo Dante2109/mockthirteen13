@@ -39,7 +39,7 @@ appoiRouter.post("/book/:id",async(req,res)=>{
         let appoi=await AppoiModel.find({_id:id})
 
         if(appoi[0].slots){
-            await AppoiModel.findByIdAndDelete({_id:id},{slots:appoi[0].slots-1})
+            await AppoiModel.findByIdAndUpdate({_id:id},{slots:appoi[0].slots-1})
             res.status(200).send({msg:"Appointment has been booked"})
         }else{
             res.status(404).send({msg:"No appointment slots left"})
