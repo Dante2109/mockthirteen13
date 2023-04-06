@@ -8,9 +8,6 @@ const server=express();
 
 server.use(cors())
 server.use(express.json())
-server.get("/",(req,res)=>{
-    res.send("Everything is working")
-})
 server.use("/users",userRouter)
 server.use(authenticate)
 server.use("/appointments",appoiRouter)
